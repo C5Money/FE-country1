@@ -11,43 +11,80 @@
 }
 
 .blauw{
-    border: 2px solid blue;
     position: absolute;
     left: 607px;
-    top: 313px;
+    top: 315px;
+    height: 383px;
+    transition: height 2s;
+}
+
+.blauw:hover{
+    height: 480px;
+    z-index: 1;
 }
 
 .donkerGroen{
-    border: 2px solid darkgreen;
     position: absolute;
     left: 42px;
-    top: 112px;
+    top: 113px;
+    z-index: 1;
+    height: 364px;
+    transition: height 2s;
+}
+
+.donkerGroen:hover{
+    height: 464px;
+
 }
 
 .geel{
-    border: 2px solid yellow;
     position: absolute;
     left: 59px;
-    top: 112px;
+    top: 114px;
+    height: 219px;
+    transition: height 2s;
+}
+
+.geel:hover{
+    height: 269px;
+    z-index: 1;
 }
 
 .lichtGroen{
-    border: 2px solid greenyellow;
     position: absolute;
     left: 308px;
     top: 448px;
+    height: 358px;
+    transition: height 2s;
+}
+
+.lichtGroen:hover{
+    height: 500px;
+    z-index: 1;
 }
 
 .paars{
-    border: 2px solid rebeccapurple;
     position: absolute;
     left: 1197px;
-    top: 526px;
+    top: 529px;
+    height: 217px;
+    transition: height 2s;
+}
+
+.paars:hover{
+    height: 317px;
+    z-index: 1;
 }
 
 .rood{
-    border: 2px solid red;
     position: absolute;
-    left: 797px;
-    top: 221px;
+    left: 795px;
+    top: 222px;
+    height: 355px;
+    transition: height 2s;
+}
+
+.rood:hover{
+    height: 452px;
+    z-index: 1;
 }
