@@ -1,0 +1,53 @@
+/*CSS reset*/
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.world-box{
+    border: 2px solid olivedrab;
+    position: relative;
+}
+
+.blauw{
+    border: 2px solid blue;
+    position: absolute;
+    left: 607px;
+    top: 313px;
+}
+
+.donkerGroen{
+    border: 2px solid darkgreen;
+    position: absolute;
+    left: 42px;
+    top: 112px;
+}
+
+.geel{
+    border: 2px solid yellow;
+    position: absolute;
+    left: 59px;
+    top: 112px;
+}
+
+.lichtGroen{
+    border: 2px solid greenyellow;
+    position: absolute;
+    left: 308px;
+    top: 448px;
+}
+
+.paars{
+    border: 2px solid rebeccapurple;
+    position: absolute;
+    left: 1197px;
+    top: 526px;
+}
+
+.rood{
+    border: 2px solid red;
+    position: absolute;
+    left: 797px;
+    top: 221px;
+}

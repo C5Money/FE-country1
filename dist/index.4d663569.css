@@ -1,0 +1,54 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.world-box {
+  border: 2px solid #6b8e23;
+  position: relative;
+}
+
+.blauw {
+  border: 2px solid #00f;
+  position: absolute;
+  top: 313px;
+  left: 607px;
+}
+
+.donkerGroen {
+  border: 2px solid #006400;
+  position: absolute;
+  top: 112px;
+  left: 42px;
+}
+
+.geel {
+  border: 2px solid #ff0;
+  position: absolute;
+  top: 112px;
+  left: 59px;
+}
+
+.lichtGroen {
+  border: 2px solid #adff2f;
+  position: absolute;
+  top: 448px;
+  left: 308px;
+}
+
+.paars {
+  border: 2px solid #639;
+  position: absolute;
+  top: 526px;
+  left: 1197px;
+}
+
+.rood {
+  border: 2px solid red;
+  position: absolute;
+  top: 221px;
+  left: 797px;
+}
+
+/*# sourceMappingURL=index.4d663569.css.map */
