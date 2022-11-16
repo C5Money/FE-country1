@@ -7,16 +7,32 @@
     <script defer src="app.js" type="module"></script>
 </head>
 <body>
-<div class="wereld-container">
-    <div class="world-box">
-<!--        <img class="world" src="assets/world_map.png" alt="Worldmap"/>-->
-        <img class="blauw" src="assets/blauwAfrika.png" alt="Afrika"/>
-        <img class="donkerGroen" src="assets/donkerGroenNoordAmerika.png" alt="Noord-Amerika"/>
-        <img class="geel" src="assets/geelEuropa.png" alt="Europa"/>
-        <img class="lichtGroen" src="assets/groenZuidAmerika.png" alt="Zuid-Amerika"/>
-        <img class="paars" src="assets/paarsOceania.png" alt="Oceania"/>
-        <img class="rood" src="assets/roodAsia.png" alt="Asia"/>
+<header class="outer-container">
+    <div class="inner-container">
+        <div class="world-box">
+            <img src="assets/world_map.png" class="world-pic">
+            <span id="error-message"></span>
+            <img class="blauw" src="assets/blauwAfrika.png" alt="Afrika"/>
+            <img class="donkerGroen" src="assets/donkerGroenNoordAmerika.png" alt="Noord-Amerika"/>
+            <img class="geel" src="assets/geelEuropa.png" alt="Europa"/>
+            <img class="lichtGroen" src="assets/groenZuidAmerika.png" alt="Zuid-Amerika"/>
+            <img class="paars" src="assets/paarsOceania.png" alt="Oceania"/>
+            <img class="rood" src="assets/roodAsia.png" alt="Asia"/>
+        </div>
     </div>
-</div>
+</header>
+
+
+<!--Maak een <ul>-tag in de HTML die je als referentie kunt gebruiken in jouw JavaScript bestand;-->
+<main class="outer-container">
+    <div class="inner-container">
+        <section class="landen-container">
+            <ul id="landList">
+
+            </ul>
+        </section>
+    </div>
+</main>
+
 </body>
 </html>

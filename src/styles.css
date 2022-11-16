@@ -5,8 +5,33 @@
     box-sizing: border-box;
 }
 
+.outer-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    /*border: 2px solid blue;*/
+}
+
+#error-message{
+    /*border: 2px solid peru;*/
+}
+
+.inner-container{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 1400px;
+    align-items: center;
+    margin: 0 50px;
+    /*border: 2px solid orchid;*/
+}
+.world-pic {
+    visibility: hidden;
+}
+
 .world-box{
-    border: 2px solid olivedrab;
+    /*border: 2px solid #d5791d;*/
     position: relative;
 }
 
@@ -87,4 +112,8 @@
 .rood:hover{
     height: 452px;
     z-index: 1;
+}
+
+#landList{
+    /*border: 2px solid red;*/
 }

@@ -4,8 +4,27 @@
   padding: 0;
 }
 
+.outer-container {
+  width: 100vw;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.inner-container {
+  flex-direction: column;
+  flex-basis: 1400px;
+  align-items: center;
+  margin: 0 50px;
+  display: flex;
+}
+
+.world-pic {
+  visibility: hidden;
+}
+
 .world-box {
-  border: 2px solid #6b8e23;
   position: relative;
 }
 
