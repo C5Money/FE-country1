@@ -30,21 +30,24 @@ async function fetchAllCountryInfo(){
 
 
 // referentie ul-tag
-        const listItemName = document.createElement("li");
-        listItemName.setAttribute("class", "land");
-        listItemName.textContent = `${land.name}` ;
-        unorderedList.appendChild(listItemName);
+            const listItemFlag = document.createElement("img");
+            listItemFlag.setAttribute("src", `${land.flag}`);
+            listItemFlag.setAttribute("alt", `Flag of ${land.name}`);
+            listItemFlag.setAttribute("class", "flag");
+            unorderedList.appendChild(listItemFlag);
 
-        const listItemPop = document.createElement("li");
-        listItemPop.setAttribute("class", "land1");
-        listItemPop.textContent = `Has a population of ${land.population} people` ;
-        unorderedList.appendChild(listItemPop);
+            const listItemName = document.createElement("li");
+            listItemName.setAttribute("class", "land");
+            listItemName.textContent = `${land.name}` ;
+            unorderedList.appendChild(listItemName);
 
-        const listItemFlag = document.createElement("img");
-        listItemFlag.setAttribute("src", `${land.flag}`);
-        listItemFlag.setAttribute("alt", `Flag of ${land.name}`);
-        listItemFlag.setAttribute("class", "flag");
-        unorderedList.appendChild(listItemFlag);
+            const listItemPop = document.createElement("li");
+            listItemPop.setAttribute("class", "land1");
+            listItemPop.textContent = `Has a population of ${land.population} people` ;
+            unorderedList.appendChild(listItemPop);
+
+
+
 
 
 // Gekleurde landennamen

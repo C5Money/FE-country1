@@ -555,6 +555,11 @@ async function fetchAllCountryInfo() {
         // Door de data mappen
         result.data.map((land)=>{
             // referentie ul-tag
+            const listItemFlag = document.createElement("img");
+            listItemFlag.setAttribute("src", `${land.flag}`);
+            listItemFlag.setAttribute("alt", `Flag of ${land.name}`);
+            listItemFlag.setAttribute("class", "flag");
+            unorderedList.appendChild(listItemFlag);
             const listItemName = document.createElement("li");
             listItemName.setAttribute("class", "land");
             listItemName.textContent = `${land.name}`;
@@ -563,11 +568,6 @@ async function fetchAllCountryInfo() {
             listItemPop.setAttribute("class", "land1");
             listItemPop.textContent = `Has a population of ${land.population} people`;
             unorderedList.appendChild(listItemPop);
-            const listItemFlag = document.createElement("img");
-            listItemFlag.setAttribute("src", `${land.flag}`);
-            listItemFlag.setAttribute("alt", `Flag of ${land.name}`);
-            listItemFlag.setAttribute("class", "flag");
-            unorderedList.appendChild(listItemFlag);
         // Gekleurde landennamen
         //         function getRegioncolors(landRegion) {
         //             const landNaam = document.getElementById("li");
