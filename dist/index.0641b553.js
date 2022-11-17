@@ -600,6 +600,7 @@ async function fetchAllCountryInfo() {
         if (err.result.status === 500) errorMessage.textContent = "Internal SErver Error | 500";
     }
 }
+// Hoofdstuk Country2
 fetchAllCountryInfo();
 
 },{"axios":"jo6P5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"jo6P5":[function(require,module,exports) {

@@ -94,6 +94,9 @@ const errorMessage = document.getElementById("error-message");
     }
 }
 
+
+// Hoofdstuk Country2
+
 fetchAllCountryInfo();
 
 
