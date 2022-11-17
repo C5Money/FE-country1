@@ -548,6 +548,10 @@ async function fetchAllCountryInfo() {
         const result = await (0, _axiosDefault.default).get(URI + ENDPOINT);
         // Probeer eens om de naam van het allereerste land te loggen in de console, welk pad moet je hiervoor volgen?
         console.log(result.data[0].name);
+        // Zorg er ten slotte voor dat je de response data eerst sorteert op populatie, van laag naar hoog, voor je eroverheen mapt om de landen op de pagina weer te geven.
+        result.data.sort((a, b)=>{
+            return a.population - b.population;
+        });
         // Door de data mappen
         result.data.map((land)=>{
             // referentie ul-tag
@@ -565,26 +569,28 @@ async function fetchAllCountryInfo() {
             listItemFlag.setAttribute("class", "flag");
             unorderedList.appendChild(listItemFlag);
         // Gekleurde landennamen
-        //         const landNaam = document.getElementById("li");
-        //         landNaam.setAttribute("class", "naamkleuren");
-        //         switch (land.region) {
-        //             case "Asia":
-        //                 landNaam.setAttribute("class", "asia");
-        //                 break;
-        //             case "Africa":
-        //                 landNaam.setAttribute("class", "africa");
-        //                 break;
-        //             case "Americas":
-        //                 landNaam.setAttribute("class", "americas");
-        //                 break;
-        //             case "Europe":
-        //                 landNaam.setAttribute("class", "europe");
-        //                 break;
-        //             case "Oceania":
-        //                 landNaam.setAttribute("class", "oceania");
-        //                 break;
-        //             default:
-        //                 console.log("Found no positive outcome");
+        //         function getRegioncolors(landRegion) {
+        //             const landNaam = document.getElementById("li");
+        //             landNaam.setAttribute("class", "naamkleuren");
+        //             switch (landRegion.region) {
+        //                 case "Asia":
+        //                     landNaam.setAttribute("class", "asia");
+        //                     break;
+        //                 case "Africa":
+        //                     landNaam.setAttribute("class", "africa");
+        //                     break;
+        //                 case "Americas":
+        //                     landNaam.setAttribute("class", "americas");
+        //                     break;
+        //                 case "Europe":
+        //                     landNaam.setAttribute("class", "europe");
+        //                     break;
+        //                 case "Oceania":
+        //                     landNaam.setAttribute("class", "oceania");
+        //                     break;
+        //                 default:
+        //                     console.log("Found no positive outcome");
+        //             }
         //         }
         });
     } catch (err) {
