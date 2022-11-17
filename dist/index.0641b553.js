@@ -540,20 +540,52 @@ var _axiosDefault = parcelHelpers.interopDefault(_axios);
 // https://restcountries.com/v2/all
 // Schrijf een asynchrone functie die, met behulp van Axios, een GET-request maakt naar het juiste endpoint.
 // Log de response in de console en bestudeer de data goed: hoe is het opgebouwd?
-const URI = "https://restcountries.com/";
-const ENDPOINT = "v2/all";
+const URI = "https://restcountries.com/v2/";
+const ENDPOINT = "all";
 const unorderedList = document.getElementById("landList");
 async function fetchAllCountryInfo() {
     try {
         const result = await (0, _axiosDefault.default).get(URI + ENDPOINT);
-        console.log(result.data);
         // Probeer eens om de naam van het allereerste land te loggen in de console, welk pad moet je hiervoor volgen?
-        result.data.map((info)=>{
+        console.log(result.data[0].name);
+        // Door de data mappen
+        result.data.map((land)=>{
             // referentie ul-tag
-            const listItem = document.createElement("li");
-            listItem.setAttribute("class", "land");
-            listItem.textContent = info.name;
-            unorderedList.appendChild(listItem);
+            const listItemName = document.createElement("li");
+            listItemName.setAttribute("class", "land");
+            listItemName.textContent = `${land.name}`;
+            unorderedList.appendChild(listItemName);
+            const listItemPop = document.createElement("li");
+            listItemPop.setAttribute("class", "land1");
+            listItemPop.textContent = `Has a population of ${land.population} people`;
+            unorderedList.appendChild(listItemPop);
+            const listItemFlag = document.createElement("img");
+            listItemFlag.setAttribute("src", `${land.flag}`);
+            listItemFlag.setAttribute("alt", `Flag of ${land.name}`);
+            listItemFlag.setAttribute("class", "flag");
+            unorderedList.appendChild(listItemFlag);
+        // Gekleurde landennamen
+        //         const landNaam = document.getElementById("li");
+        //         landNaam.setAttribute("class", "naamkleuren");
+        //         switch (land.region) {
+        //             case "Asia":
+        //                 landNaam.setAttribute("class", "asia");
+        //                 break;
+        //             case "Africa":
+        //                 landNaam.setAttribute("class", "africa");
+        //                 break;
+        //             case "Americas":
+        //                 landNaam.setAttribute("class", "americas");
+        //                 break;
+        //             case "Europe":
+        //                 landNaam.setAttribute("class", "europe");
+        //                 break;
+        //             case "Oceania":
+        //                 landNaam.setAttribute("class", "oceania");
+        //                 break;
+        //             default:
+        //                 console.log("Found no positive outcome");
+        //         }
         });
     } catch (err) {
         const errorMessage = document.getElementById("error-message");

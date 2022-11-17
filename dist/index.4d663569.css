@@ -106,4 +106,28 @@
   z-index: 1;
 }
 
+.flag {
+  height: 35px;
+}
+
+.africa {
+  color: #00f;
+}
+
+.americas {
+  color: green;
+}
+
+.asia {
+  color: red;
+}
+
+.europe {
+  color: #ff0;
+}
+
+.oceania {
+  color: purple;
+}
+
 /*# sourceMappingURL=index.4d663569.css.map */

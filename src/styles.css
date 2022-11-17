@@ -1,10 +1,12 @@
-/*CSS reset*/
+/*********** CSS reset ***********/
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
+
+/*********** Layout webpage ***********/
 .outer-container{
     display: flex;
     flex-direction: row;
@@ -12,10 +14,6 @@
     align-items: center;
     width: 100vw;
     /*border: 2px solid blue;*/
-}
-
-#error-message{
-    /*border: 2px solid peru;*/
 }
 
 .inner-container{
@@ -26,6 +24,14 @@
     margin: 0 50px;
     /*border: 2px solid orchid;*/
 }
+
+#error-message{
+/*border: 2px solid peru;*/
+}
+
+
+
+/*********** Interactieve wereldkaart ***********/
 .world-pic {
     visibility: hidden;
 }
@@ -59,7 +65,6 @@
 
 .donkerGroen:hover{
     height: 464px;
-
 }
 
 .geel{
@@ -114,6 +119,34 @@
     z-index: 1;
 }
 
+
+/***********  ***********/
 #landList{
     /*border: 2px solid red;*/
+}
+
+.flag{
+    height: 35px;
+}
+
+
+/*********** De gekleurde namen van de landen ***********/
+.africa {
+    color: blue;
+}
+
+.americas {
+    color: green;
+}
+
+.asia {
+    color: red;
+}
+
+.europe {
+    color: yellow;
+}
+
+.oceania {
+    color: purple;
 }
