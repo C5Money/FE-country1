@@ -17,7 +17,7 @@ async function fetchAllCountryInfo(){
 
 
 // Probeer eens om de naam van het allereerste land te loggen in de console, welk pad moet je hiervoor volgen?
-        console.log(result.data[0].name);
+        console.log(result.data[1].region);
 
 
 // Zorg er ten slotte voor dat je de response data eerst sorteert op populatie, van laag naar hoog, voor je eroverheen mapt om de landen op de pagina weer te geven.
@@ -47,35 +47,26 @@ async function fetchAllCountryInfo(){
             unorderedList.appendChild(listItemPop);
 
 
-
-
-
 // Gekleurde landennamen
-//         function getRegioncolors(landRegion) {
-//             const landNaam = document.getElementById("li");
-//             landNaam.setAttribute("class", "naamkleuren");
-//             switch (landRegion.region) {
-//                 case "Asia":
-//                     landNaam.setAttribute("class", "asia");
-//                     break;
-//                 case "Africa":
-//                     landNaam.setAttribute("class", "africa");
-//                     break;
-//                 case "Americas":
-//                     landNaam.setAttribute("class", "americas");
-//                     break;
-//                 case "Europe":
-//                     landNaam.setAttribute("class", "europe");
-//                     break;
-//                 case "Oceania":
-//                     landNaam.setAttribute("class", "oceania");
-//                     break;
-//                 default:
-//                     console.log("Found no positive outcome");
-//             }
-//         }
-
-
+            switch (result.data.region) {
+                case 'Asia':
+                    listItemName.style.color = "#d5791d";
+                    break;
+                case "Africa":
+                    listItemName.setAttribute("class", "africa");
+                    break;
+                case "Americas":
+                    land.setAttribute("class", "americas");
+                    break;
+                case "Europe":
+                    listItemName.style.color = "#d5791d";
+                    break;
+                case "Oceania":
+                    land.name.style.color = "#d5791d";
+                    break;
+                default:
+                    console.log("Found no positive outcome");
+            }
         });
 
 
