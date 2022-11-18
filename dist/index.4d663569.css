@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   font-family: VT323, monospace;
+  font-size: 21px;
 }
 
 .outer-container {
@@ -109,8 +110,10 @@
 }
 
 .uList {
-  border: 2px solid red;
-  display: flex;
+  border-radius: 10px;
+  padding: 15px;
+  list-style: none;
+  box-shadow: 1px 1px 8px 3px #ababab;
 }
 
 .flag {
