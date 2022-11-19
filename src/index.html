@@ -2,9 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css"/>
     <title>Country Information - World Regions</title>
+    <script defer src="app.js" type="module"></script>
 </head>
 <body>
+<header class="outer-container">
+    <div class="inner-container">
+        <div class="world-box">
+            <img src="assets/world_map.png" class="world-pic">
+            <span id="error-message"></span>
+            <img class="blauw" src="assets/blauwAfrika.png" alt="Afrika"/>
+            <img class="donkerGroen" src="assets/donkerGroenNoordAmerika.png" alt="Noord-Amerika"/>
+            <img class="geel" src="assets/geelEuropa.png" alt="Europa"/>
+            <img class="lichtGroen" src="assets/groenZuidAmerika.png" alt="Zuid-Amerika"/>
+            <img class="paars" src="assets/paarsOceania.png" alt="Oceania"/>
+            <img class="rood" src="assets/roodAsia.png" alt="Asia"/>
+        </div>
+    </div>
+</header>
+
+
+<!--Maak een <ul>-tag in de HTML die je als referentie kunt gebruiken in jouw JavaScript bestand;-->
+<main class="outer-container">
+    <div class="inner-container">
+        <section class="landen-container">
+            <ul id="landList" class="uList"></ul>
+        </section>
+    </div>
+</main>
 
 </body>
 </html>

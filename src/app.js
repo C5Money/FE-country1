@@ -1,1 +1,93 @@
-console.log('Hallo daar!');
+// Installeer en importeer Axios;
+import axios from "axios";
+
+// Neem de documentatie van de REST Countries API goed door. Welk endpoint heb je nodig om informatie over alle landen op te halen?
+// https://restcountries.com/v2/all
+
+// Schrijf een asynchrone functie die, met behulp van Axios, een GET-request maakt naar het juiste endpoint.
+// Log de response in de console en bestudeer de data goed: hoe is het opgebouwd?
+const URI = "https://restcountries.com/v2/";
+const ENDPOINT = "all";
+
+const unorderedList = document.getElementById("landList");
+
+async function fetchAllCountryInfo(){
+    try {
+        const result = await axios.get(URI + ENDPOINT);
+
+
+// Probeer eens om de naam van het allereerste land te loggen in de console, welk pad moet je hiervoor volgen?
+        console.log(result.data[1].region);
+
+
+// Zorg er ten slotte voor dat je de response data eerst sorteert op populatie, van laag naar hoog, voor je eroverheen mapt om de landen op de pagina weer te geven.
+        result.data.sort((a, b) => {
+            return a.population - b.population;
+        });
+
+// Door de data mappen
+        result.data.map((land) => {
+
+
+// referentie ul-tag
+            const listItemFlag = document.createElement("img");
+            listItemFlag.setAttribute("src", `${land.flag}`);
+            listItemFlag.setAttribute("alt", `Flag of ${land.name}`);
+            listItemFlag.setAttribute("class", "flag");
+            unorderedList.appendChild(listItemFlag);
+
+            const listItemName = document.createElement("li");
+            listItemName.setAttribute("class", "land");
+            listItemName.textContent = `${land.name}` ;
+            unorderedList.appendChild(listItemName);
+
+            const listItemPop = document.createElement("li");
+            listItemPop.setAttribute("class", "land1");
+            listItemPop.textContent = `Has a population of ${land.population} people` ;
+            unorderedList.appendChild(listItemPop);
+
+
+// Gekleurde landennamen
+            switch (result.data.region) {
+                case 'Asia':
+                    listItemName.style.color = "#d5791d";
+                    break;
+                case "Africa":
+                    listItemName.setAttribute("class", "africa");
+                    break;
+                case "Americas":
+                    land.setAttribute("class", "americas");
+                    break;
+                case "Europe":
+                    listItemName.style.color = "#d5791d";
+                    break;
+                case "Oceania":
+                    land.name.style.color = "#d5791d";
+                    break;
+                default:
+                    console.log("Found no positive outcome");
+            }
+        });
+
+
+    } catch (err){
+
+const errorMessage = document.getElementById("error-message");
+
+
+// Welke error message is van toepassing
+        if (err.result.status === 404){
+            errorMessage.textContent = "Page Not Found | 404";
+        }
+        if (err.result.status === 500){
+            errorMessage.textContent = "Internal SErver Error | 500";
+        }
+    }
+}
+
+
+// Hoofdstuk Country2
+
+fetchAllCountryInfo();
+
+

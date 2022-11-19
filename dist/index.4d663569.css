@@ -1,0 +1,144 @@
+@import "https://fonts.googleapis.com/css2?family=VT323&display=swap";
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: VT323, monospace;
+  font-size: 21px;
+}
+
+.outer-container {
+  width: 100vw;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.inner-container {
+  flex-direction: column;
+  flex-basis: 1400px;
+  align-items: center;
+  margin: 0 50px;
+  display: flex;
+}
+
+.world-pic {
+  visibility: hidden;
+}
+
+.world-box {
+  position: relative;
+}
+
+.blauw {
+  height: 383px;
+  transition: height 2s;
+  position: absolute;
+  top: 315px;
+  left: 607px;
+}
+
+.blauw:hover {
+  height: 480px;
+  z-index: 1;
+}
+
+.donkerGroen {
+  z-index: 1;
+  height: 364px;
+  transition: height 2s;
+  position: absolute;
+  top: 113px;
+  left: 42px;
+}
+
+.donkerGroen:hover {
+  height: 464px;
+}
+
+.geel {
+  height: 219px;
+  transition: height 2s;
+  position: absolute;
+  top: 114px;
+  left: 59px;
+}
+
+.geel:hover {
+  height: 269px;
+  z-index: 1;
+}
+
+.lichtGroen {
+  height: 358px;
+  transition: height 2s;
+  position: absolute;
+  top: 448px;
+  left: 308px;
+}
+
+.lichtGroen:hover {
+  height: 500px;
+  z-index: 1;
+}
+
+.paars {
+  height: 217px;
+  transition: height 2s;
+  position: absolute;
+  top: 529px;
+  left: 1197px;
+}
+
+.paars:hover {
+  height: 317px;
+  z-index: 1;
+}
+
+.rood {
+  height: 355px;
+  transition: height 2s;
+  position: absolute;
+  top: 222px;
+  left: 795px;
+}
+
+.rood:hover {
+  height: 452px;
+  z-index: 1;
+}
+
+.uList {
+  column-count: 3;
+  border-radius: 10px;
+  padding: 15px;
+  list-style: none;
+  box-shadow: 1px 1px 8px 3px #ababab;
+}
+
+.flag {
+  height: 35px;
+}
+
+.africa {
+  color: #00f;
+}
+
+.americas {
+  color: green;
+}
+
+.asia {
+  color: red;
+}
+
+.europe {
+  color: #ff0;
+}
+
+.oceania {
+  color: purple;
+}
+
+/*# sourceMappingURL=index.4d663569.css.map */
