@@ -10,8 +10,8 @@
 <header class="outer-container">
     <div class="inner-container">
         <div class="world-box">
-            <img src="assets/world_map.png" class="world-pic">
             <span id="error-message"></span>
+            <img src="assets/world_map.png" class="world-pic">
             <img class="blauw" src="assets/blauwAfrika.png" alt="Afrika"/>
             <img class="donkerGroen" src="assets/donkerGroenNoordAmerika.png" alt="Noord-Amerika"/>
             <img class="geel" src="assets/geelEuropa.png" alt="Europa"/>
@@ -26,6 +26,10 @@
 <!--Maak een <ul>-tag in de HTML die je als referentie kunt gebruiken in jouw JavaScript bestand;-->
 <main class="outer-container">
     <div class="inner-container">
+        <label>
+            <input id="getUser-invoerbalk" type="number" />
+        </label>
+        <button id="btn-landen" class="btn-landen" type="button" name="landen-button">Get Countries</button>
         <section class="landen-container">
             <ul id="landList" class="uList"></ul>
         </section>

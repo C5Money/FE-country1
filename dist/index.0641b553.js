@@ -543,15 +543,20 @@ var _axiosDefault = parcelHelpers.interopDefault(_axios);
 const URI = "https://restcountries.com/v2/";
 const ENDPOINT = "all";
 const unorderedList = document.getElementById("landList");
-async function fetchAllCountryInfo() {
+async function fetchAllCountryInfo(id) {
     try {
-        const result = await (0, _axiosDefault.default).get(URI + ENDPOINT);
+        const result = await (0, _axiosDefault.default).get(URI + ENDPOINT, {
+            params: {
+                id: id
+            }
+        });
         // Probeer eens om de naam van het allereerste land te loggen in de console, welk pad moet je hiervoor volgen?
         console.log(result.data[1].region);
         // Zorg er ten slotte voor dat je de response data eerst sorteert op populatie, van laag naar hoog, voor je eroverheen mapt om de landen op de pagina weer te geven.
         result.data.sort((a, b)=>{
             return a.population - b.population;
         });
+        unorderedList.replaceChildren();
         // Door de data mappen
         result.data.map((land)=>{
             // referentie ul-tag
@@ -561,43 +566,46 @@ async function fetchAllCountryInfo() {
             listItemFlag.setAttribute("class", "flag");
             unorderedList.appendChild(listItemFlag);
             const listItemName = document.createElement("li");
-            listItemName.setAttribute("class", "land");
+            listItemName.setAttribute("class", landenKleur(land.region));
             listItemName.textContent = `${land.name}`;
             unorderedList.appendChild(listItemName);
             const listItemPop = document.createElement("li");
             listItemPop.setAttribute("class", "land1");
             listItemPop.textContent = `Has a population of ${land.population} people`;
             unorderedList.appendChild(listItemPop);
-            // Gekleurde landennamen
-            switch(result.data.region){
-                case "Asia":
-                    listItemName.style.color = "#d5791d";
-                    break;
-                case "Africa":
-                    listItemName.setAttribute("class", "africa");
-                    break;
-                case "Americas":
-                    land.setAttribute("class", "americas");
-                    break;
-                case "Europe":
-                    listItemName.style.color = "#d5791d";
-                    break;
-                case "Oceania":
-                    land.name.style.color = "#d5791d";
-                    break;
-                default:
-                    console.log("Found no positive outcome");
-            }
         });
     } catch (err) {
         const errorMessage = document.getElementById("error-message");
+        console.log(err.request.status);
         // Welke error message is van toepassing
-        if (err.result.status === 404) errorMessage.textContent = "Page Not Found | 404";
-        if (err.result.status === 500) errorMessage.textContent = "Internal SErver Error | 500";
+        if (err.request.status === 404) errorMessage.textContent = "Page Not Found | 404";
+        if (err.request.status === 500) errorMessage.textContent = "Internal SErver Error | 500";
     }
 }
-// Hoofdstuk Country2
-fetchAllCountryInfo();
+// Landnamen Kleuren
+function landenKleur(regio) {
+    switch(regio){
+        case "Asia":
+            return "asia";
+        case "Africa":
+            return "africa";
+        case "Americas":
+            return "americas";
+        case "Europe":
+            return "europe";
+        case "Oceania":
+            return "oceania";
+        default:
+            console.log("Found no positive outcome");
+    }
+}
+// Hfst: Country2
+// Get countrynames via button
+const landenButton = document.getElementById("btn-landen");
+const getSingleCountry = document.getElementById("getUser-invoerbalk");
+landenButton.addEventListener("click", ()=>{
+    fetchAllCountryInfo(getSingleCountry.value);
+});
 
 },{"axios":"jo6P5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"jo6P5":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");

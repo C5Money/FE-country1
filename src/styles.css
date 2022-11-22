@@ -124,6 +124,20 @@
 }
 
 
+/*********** Country Button ***********/
+.btn-landen{
+    padding: 5px;
+    margin: 15px 0;
+    border-radius: 5px;
+    border: none;
+    color: #969696;
+}
+
+.btn-landen:hover{
+    box-shadow: 1px 1px 1px 3px #ffc3c3;
+}
+
+
 /*********** listproperties ***********/
 .uList{
     list-style: none;
